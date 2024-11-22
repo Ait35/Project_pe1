@@ -19,8 +19,17 @@ document.getElementById("list-item-2").addEventListener("click", function () {
         }
     }
 });
+document.getElementById("list-item-3").addEventListener("click", function () {
+    for (let i = 0; i < listAllitem.length; i++) {
+        if(i == 2){
+            listAllitem[i].style.display = "block";
+        }else{
+            listAllitem[i].style.display = "none";
+        }
+    }
+});
 
-function navbutton(x){
+function buttonstyle(x){
     let buttonav1 = document.getElementById("navbutton_1")
     let buttonav2 = document.getElementById("navbutton_2")
     let buttonav3 = document.getElementById("navbutton_3")
@@ -82,18 +91,21 @@ function navbutton(x){
                 })
                 break;
             default:
-                block_conten.style = "width: 45%";
-                buttonav2.style.background = "green";
-                buttonav2.style.color = "white";
-                buttonav1.style.background = "white";
-                buttonav1.style.color = "green";
+                block_conten.style.width = "80%";
+                buttonav1.style.background = "green";
+                buttonav1.style.color = "white";
+                buttonav2.style.background = "white";
+                buttonav2.style.color = "green";
                 buttonav3.style.background = "white";
                 buttonav3.style.color = "green";
+                displaybutton.forEach(displaybutton => {
+                    displaybutton.style.width = "200px"
+                })
                 input_T.forEach(input_T => {
-                    input_T.style.width = "200px"
+                    input_T.style.width = "300px"
                 })
                 result_T.forEach(result_T => {
-                    result_T.style.width = "326px"
+                    result_T.style.width = "423px"
                     result_T.style.marginTop = "15px"
                 })
                 break;

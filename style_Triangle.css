@@ -36,16 +36,19 @@
 .block_conten_triangle{
     margin: 10px;
     padding: 10px;
-    width: 45%;
+    width: 80%;
     height: 230px;
     border: 1px solid black;
     border-radius: 15px;
+}
+.input_T{
+    width :300px;
 }
 .result_T{
     margin-top: 15px;
     border: 1px solid#d6d4d4;
     background-color: white;
-    width: 315px;
+    width: 423px;
 }
 /* ----------button----------- */
 .btn_process{
@@ -58,6 +61,7 @@
     width: 500px;
 }
 .btn_Ad_Re{
+    width: 200px;
     padding: 5px;
     margin: 5px;
     background-color: white;
