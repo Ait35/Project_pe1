@@ -1,0 +1,67 @@
+/* กำหนดพื้นหลังของฟอร์มเฉพาะ */
+.quadratic-form {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* พื้นหลังฟ้าอ่อน */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 50px auto;
+    font-size: 18px;
+    text-align: center;
+    border: 2px solid #ddd; /* ขอบสีเทาอ่อน */
+    position: relative; /* ทำให้พื้นหลังของฟอร์มไม่ลามไปที่ส่วนอื่น */
+  }
+  
+  /* เพิ่มลักษณะของข้อความในส่วนต่างๆ ของฟอร์ม */
+  .quadratic-form h1 {
+    color: #eff1ef; 
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .quadratic-form label {
+    font-size: 16px;
+    color: #333; /* สีตัวอักษรเป็นสีเทาดำ */
+    text-align: left;
+  }
+  
+  .quadratic-form input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;  /* สีขอบสีเทาอ่อน */
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 100%; /* ให้ช่องกรอกข้อมูลกว้างเต็มฟอร์ม */
+  }
+  
+  .quadratic-form input[type="submit"] {
+    background-color: #4CAF50; /* ปุ่มสีเขียว */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .quadratic-form input[type="submit"]:hover {
+    background-color: #45a049; /* สีเขียวเข้มเมื่อ hover */
+  }
+  
+  #result {
+    background-color: #f1f1f1;  /* สีพื้นหลังผลลัพธ์ */
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;  /* ขอบบางๆ */
+    font-size: 18px;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #result .error-message {
+    color: red;  /* สีแดงสำหรับข้อความ error */
+    font-size: 16px;
+  }
+  

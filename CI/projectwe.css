@@ -1,0 +1,80 @@
+.Ci_body{
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 600px;
+    width: 1000px;
+}
+
+.Ci_h1 {
+    font-size: 2rem;
+    color: #0b0b0b;
+    background-color: #74ebd5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 1000px;
+}
+
+.Ci_form {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.Ci_label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.Ci_input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.Ci_input:focus {
+    border-color: #74ebd5;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(116, 235, 213, 0.6);
+}
+
+.Ci_button {
+    width: 100%;
+    padding: 10px;
+    background: #74ebd5;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.Ci_button:hover {
+    background: #9face6;
+}
+
+#Ci_result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #444;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}

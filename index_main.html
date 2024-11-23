@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/styleMain&Triangle.css">
+  <link rel="stylesheet" href="/aaverage/Css_Average.css">
+  <link rel="stylesheet" href="/CI/projectwe.css">
+  <link rel="stylesheet" href="/mathplus2/mathplus2.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <nav class="navHeader"><h4>Math Helper</h4></nav>
+
+  <span class="menu">
+    <section class="sidebar">
+      <div class="row">
+        <div class="col-4">
+          <div id="list-example" class="list-group">
+            <a class="list-group-item list-group-item-action" href="#list-item-1" id="list-item-1">Triangle</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-2" id="list-item-2">Compound interest</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-3" id="list-item-3">Average
+              Calculator</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-4" id="list-item-4">Quadratic equation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="main_conten">
+      <div class="navbar">
+        <nav class="navbar bg-body-tertiary">
+          <form class="container-fluid justify-content-start">
+            <button class="btn btn-outline-success me-2" type="button" onclick="buttonstyle(1,'t')" id="navbutton_1">1
+              row</button>
+            <button class="btn btn-outline-success me-2" type="button" onclick="buttonstyle(2,'t')" id="navbutton_2">2
+              row</button>
+            <button class="btn btn-outline-success me-2" type="button" onclick="buttonstyle(3,'t')" id="navbutton_3">3
+              row</button>
+          </form>
+        </nav>
+        <button type="button" class="btn btn-outline-danger" id="clear" onclick="clearNode('t')">Clear</button>
+      </div>
+
+      <div class="navbar-none" style="display: none;">
+        <nav class="navbar bg-body-tertiary">
+          <form class="container-fluid justify-content-start">
+            <button class="btn btn-outline-success me-2" style="background-color: rgb(221, 221, 221); 
+            color: white; border: none;" type="button" >1row</button>
+            <button class="btn btn-outline-success me-2" style="background-color: rgb(221, 221, 221); 
+            color: white; border: none;" type="button">2row</button>
+            <button class="btn btn-outline-success me-2" style="background-color: rgb(221, 221, 221); 
+            color: white; border: none;" type="button">3row</button>
+          </form>
+        </nav>
+        <button type="button" class="btn btn-outline-danger" style="background-color: rgb(221, 221, 221); 
+            color: white; border: none; margin-right: 30px; height: 35px; margin-top: 10px;" 
+            >Clear</button>
+      </div>
+      <!-- ---------------- T------------------ -->
+       <div class="texet_show"><h2> -select function-</h2></div>
+
+      <main class="mainAll_Block_contenT" id="main_triangle">
+
+        <div class="block_conten_triangle" id="block0">
+          <select class="form-select form-select-sm" id="select_functionT0" onchange="Show_conten_triangle(0)">
+            <option selected>Open this select menu</option>
+            <option value="SinCosTan">sin,cos,tan</option>
+            <option value="InverseTrig">InverseTrig</option>
+          </select>
+
+          <div class="conten_triangle" id="sin_cos_tan0" style="display: block;">
+            <h5>sin,cos,tan</h5>
+
+            <label>เลือก : </label><select id="id_select_type0">
+              <option>---</option>
+              <option value="sin">Sin</option>
+              <option value="cos">Cos</option>
+              <option value="tan">Tan</option>
+            </select>
+
+            <select id="id_select_angle0">
+              <option>---</option>
+              <option value="true">degree</option>
+              <option value="false">radian</option>
+            </select>
+
+            <input type="number" id="id_input0" class="input_T"><br>
+            <label>result : </label><label id="id_output0" class="result_T">---</label><br>
+
+            <p class="btn_Block">
+              <input type="button" id="_button0" value="คํานวณ" class="btn_process"
+                onclick="Sin_Cos_Tan(degreeToRadian(0),0)">
+              <input type="button" value="Add Node" class="btn_Ad_Re" onclick="add_main_triangle()">
+              <input type="button" value="remove Node" id="S_remove_node0" class="btn_Ad_Re"
+                onclick="remove_main_triangle(0)">
+            </p>
+
+          </div>
+
+          <div class="conten_triangle" id="InverseTrig0" style="display: none;">
+            <h5>InverseTrig</h5>
+            <label>เลือก : </label><select id="id_select_type_IT0">
+              <option>---</option>
+              <option value="arcsin">arcSin</option>
+              <option value="arccos">arcCos</option>
+              <option value="arctan">arcTan</option>
+            </select>
+
+            <select>
+              <option>degree</option>
+            </select>
+
+            <input type="number" id="id_input_IT0" class="input_T"><br>
+            <label>result : </label><label id="id_output_IT0" class="result_T">---</label><br>
+
+            <p class="btn_Block">
+              <input type="button" id="button_IT0" value="คํานวณ" class="btn_process" onclick="InverseTrig(0)">
+              <input type="button" value="Add Node" class="btn_Ad_Re" onclick="add_main_triangle()">
+              <input type="button" value="remove Node" id="I_remove_node0" class="btn_Ad_Re"
+                onclick="remove_main_triangle(0)">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <!----------- ดอกเบื้ยทบต้น(compound interest) -------------->
+      <main class="mainAll_Block_contenT">
+        <h1 class="Ci_h1">คำนวณดอกเบี้ยทบต้น</h1>
+        <div class="Ci_body">
+
+          <form class="Ci_form" id="compoundInterestForm">
+            <label class="Ci_label" for="principal">เงินต้น (บาท):</label>
+            <input class="Ci_input" type="number" id="principal" placeholder="กรอกเงินต้น" required>
+
+            <label class="Ci_label" for="rate">อัตราดอกเบี้ยต่อปี (%):</label>
+            <input class="Ci_input" type="number" id="rate" step="0.01" placeholder="กรอกอัตราดอกเบี้ย" required>
+
+            <label class="Ci_label" for="timesCompounded">จำนวนครั้งที่คิดดอกเบี้ยต่อปี:</label>
+            <input class="Ci_input" type="number" id="timesCompounded" placeholder="กรอกจำนวนครั้ง (เช่น 12)" required>
+
+            <label class="Ci_label" for="years">ระยะเวลา (ปี):</label>
+            <input class="Ci_input" type="number" id="years" placeholder="กรอกจำนวนปี" required>
+
+            <div id="Ci_result"></div>
+
+            <button class="Ci_button" type="button" onclick="calculateCompoundInterest()">คำนวณ</button>
+          </form>
+
+
+        </div>
+
+      </main>
+
+      <!-----------------ค่าเฉลี่ย ---------------------------->
+
+      <main class="mainAll_Block_contenT" style="display: none;">
+        <div class="AddNode_AG">
+          <div class="main_block_AG" id="AGblockAG0">
+            <h3>โปรแกรมคำนวณค่าเฉลี่ย</h3>
+            <p>ใส่ตัวเลขบวกโดยคั่นด้วยเครื่องหมายจุลภาค ( , )</p>
+            <input type="text" id="numbers0" placeholder="เช่น 5,8,12,20">
+            <br>
+
+            <div id="result0">---</div>
+
+            <p class="btn_Block">
+              <button onclick="calculateAverage(0)" id="calculateAG0" class="btnAG_process">คำนวณ</button>
+              <input type="button" value="Add Node" class="btnAG_Ad_Re" onclick="add_block_conten('AG')">
+              <input type="button" value="remove Node" id="removeAG_node0" class="btnAG_Ad_Re"
+                onclick="remove_main_AG(0,'AG')">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <main class="mainAll_Block_contenT">
+        <div class="quadratic-form">
+          <h1>คำนวณสมการยกกำลังสอง</h1>
+          <form id="quadratic-form">
+            <label for="a">ค่าของ a:</label>
+            <input type="number" id="a" name="a" required>
+
+            <label for="b">ค่าของ b:</label>
+            <input type="number" id="b" name="b" required>
+
+            <label for="c">ค่าของ c:</label>
+            <input type="number" id="c" name="c" required>
+
+            <input type="submit" value="คำนวณ">
+          </form>
+          <div id="result"></div>
+        </div>
+      </main>
+
+    </main>
+  </span>
+
+
+  <!-----------------หาพื้นที่---------------------------->
+
+
+
+
+  <script src="/addNodeF.js"></script>
+  <script src="/scriptCSS.js"></script>
+  <!-- ----------------------------------- -->
+
+  <script src="/Triangle/script_Triangle.js"></script>
+
+  <!-- ----------------------------------- -->
+  <script src="/aaverage/script_Average.js"></script>
+
+  <!-- -------------------------------- -->
+  <script src="/CI/projectwe.js"></script>
+
+  <!-- -------------- -------------------------->
+   <script src="/mathplus2/mathplus2.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

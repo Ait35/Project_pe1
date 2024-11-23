@@ -28,7 +28,8 @@ function add_block_conten(x) {
 function remove_main_AG(blockAG,x) {
     switch (x) {
         case "AG":
-            if (document.querySelectorAll(`[id^=AGblockAG]`).length <= 1) {
+            if (document.querySelectorAll(`[id^=AGblockAG]`).length <= 1 ||  
+            document.querySelector(`#AGblockAG${blockAG}`).id == document.querySelector("#AGblockAG0").id) {
                 alert("ไม่สามารถลบได้")
             } else {
                 document.querySelector(`#AGblockAG${blockAG}`).remove()
