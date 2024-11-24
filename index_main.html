@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/aaverage/Css_Average.css">
   <link rel="stylesheet" href="/CI/projectwe.css">
   <link rel="stylesheet" href="/mathplus2/mathplus2.css">
+  <link rel="stylesheet" href="/calculatecircle/circle.css">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -17,7 +18,9 @@
 </head>
 
 <body>
-  <nav class="navHeader"><h4>Math Helper</h4></nav>
+  <nav class="navHeader">
+    <h4>Math Helper</h4>
+  </nav>
 
   <span class="menu">
     <section class="sidebar">
@@ -28,7 +31,10 @@
             <a class="list-group-item list-group-item-action" href="#list-item-2" id="list-item-2">Compound interest</a>
             <a class="list-group-item list-group-item-action" href="#list-item-3" id="list-item-3">Average
               Calculator</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-4" id="list-item-4">Quadratic equation</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-4" id="list-item-4">Quadratic
+              equation</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-5"
+              id="list-item-5">Diameter-area-circumference of circle</a>
           </div>
         </div>
       </div>
@@ -53,7 +59,7 @@
         <nav class="navbar bg-body-tertiary">
           <form class="container-fluid justify-content-start">
             <button class="btn btn-outline-success me-2" style="background-color: rgb(221, 221, 221); 
-            color: white; border: none;" type="button" >1row</button>
+            color: white; border: none;" type="button">1row</button>
             <button class="btn btn-outline-success me-2" style="background-color: rgb(221, 221, 221); 
             color: white; border: none;" type="button">2row</button>
             <button class="btn btn-outline-success me-2" style="background-color: rgb(221, 221, 221); 
@@ -61,11 +67,12 @@
           </form>
         </nav>
         <button type="button" class="btn btn-outline-danger" style="background-color: rgb(221, 221, 221); 
-            color: white; border: none; margin-right: 30px; height: 35px; margin-top: 10px;" 
-            >Clear</button>
+            color: white; border: none; margin-right: 30px; height: 35px; margin-top: 10px;">Clear</button>
       </div>
       <!-- ---------------- T------------------ -->
-       <div class="texet_show"><h2> -select function-</h2></div>
+      <div class="texet_show">
+        <h2> -select function-</h2>
+      </div>
 
       <main class="mainAll_Block_contenT" id="main_triangle">
 
@@ -153,10 +160,7 @@
 
             <button class="Ci_button" type="button" onclick="calculateCompoundInterest()">คำนวณ</button>
           </form>
-
-
         </div>
-
       </main>
 
       <!-----------------ค่าเฉลี่ย ---------------------------->
@@ -175,12 +179,12 @@
               <button onclick="calculateAverage(0)" id="calculateAG0" class="btnAG_process">คำนวณ</button>
               <input type="button" value="Add Node" class="btnAG_Ad_Re" onclick="add_block_conten('AG')">
               <input type="button" value="remove Node" id="removeAG_node0" class="btnAG_Ad_Re"
-                onclick="remove_main_AG(0,'AG')">
+                onclick="remove_main_All(0,'AG')">
             </p>
           </div>
         </div>
       </main>
-
+  <!-- -------------------------------- -->
       <main class="mainAll_Block_contenT">
         <div class="quadratic-form">
           <h1>คำนวณสมการยกกำลังสอง</h1>
@@ -200,14 +204,71 @@
         </div>
       </main>
 
+      <!-----------------หาพื้นที่---------------------------->
+
+      <main class="mainAll_Block_contenT">
+        <div class="addNode_caircle">
+
+          <div class="Caircle_block_conten" id = "Caircle_block_0">
+            <div class="tab_select">
+              <ul class="nav nav-tabs" style="background-color: rgb(226, 226, 226);">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#" onclick="show_Conten_Caircle(0,0)"
+                  id ="select_diameter0">diameter</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="show_Conten_Caircle(1,0)"
+                  id="select_area0">area</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"onclick="show_Conten_Caircle(2,0)"
+                  id="select_circumference0">circumference</a>
+                </li>
+              </ul>
+            </div>
+
+            <div id="block_diameter0">
+              <h2>diameter</h2>
+              <label for="radius1">รัศมี:</label>
+              <input type="number" id="radius1_0" placeholder="กรอกค่ารัศมี">
+              <button id ="calculate_diameter0" class="btn btn-outline-primary"
+              onclick="calculateDiameter(0)" style="margin-left: 5px;">คำนวณ</button>
+              <p>diameter: <span id="diameterResult_0"></span></p>
+            </div>
+
+            <div id="block_area0" style="display: none;">
+              <h2>area</h2>
+              <label for="radius2">รัศมี:</label>
+              <input type="number" id="radius2_0" placeholder="กรอกค่ารัศมี">
+              <button id ="calculate_area0"onclick="calculateArea(0)">คำนวณ</button>
+              <p>area: <span id="areaResult_0"></span></p>
+            </div>
+
+            <div id="block_circumference0" style="display: none;">
+              <h2>circumference</h2>
+              <label for="radius3">รัศมี:</label>
+              <input type="number" id="radius3_0" placeholder="กรอกค่ารัศมี">
+              <button onclick="calculateCircumference(0)" id="calculate_circumference0">คำนวณ</button>
+              <p>circumference: <span id="circumferenceResult_0"></span></p>
+            </div>
+
+            <p class="btn_Block">
+              <input type="button" value="Add Node" class="btnAG_Ad_Re" onclick="add_block_conten('Circle')">
+              <input type="button" value="remove Node" id="remove_caircle_node0" class="btnAG_Ad_Re"
+                onclick="remove_main_All(0,'Circle')">
+            </p>
+          </div>
+
+        </div>
+
+
+      </main>
+
     </main>
   </span>
 
 
-  <!-----------------หาพื้นที่---------------------------->
-
-
-
+  <!-- ----------------------------------- -->
 
   <script src="/addNodeF.js"></script>
   <script src="/scriptCSS.js"></script>
@@ -222,8 +283,13 @@
   <script src="/CI/projectwe.js"></script>
 
   <!-- -------------- -------------------------->
-   <script src="/mathplus2/mathplus2.js"></script>
 
+  <script src="/mathplus2/mathplus2.js"></script>
+
+  <!-- -------------- -------------------------->
+  <script src="/calculatecircle/calculatecircle.js"></script>
+
+  <!-- -------------- -------------------------->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

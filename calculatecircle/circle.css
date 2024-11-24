@@ -1,0 +1,15 @@
+.addNode_caircle{
+    display: flex;
+    flex-wrap: wrap;
+}
+:hover.Caircle_block_conten{
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.Caircle_block_conten{
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+}

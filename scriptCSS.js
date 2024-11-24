@@ -5,6 +5,7 @@ let navbar_block = document.querySelector(".navbar");
 
 document.getElementById("list-item-1").addEventListener("click", function () {
     document.querySelector(".texet_show").style.display = "none";
+    document.querySelector("#navbutton_3").style = "background-color: hsl(0, 0%, 98%); ; color: green; border: 1px solid green;";
     for (var i = 0; i < listAllitem.length; i++) {
         if (i == 0) {
             listAllitem[i].style.display = "flex";
@@ -36,6 +37,7 @@ document.getElementById("list-item-2").addEventListener("click", function () {
 });
 document.getElementById("list-item-3").addEventListener("click", function () {
     document.querySelector(".texet_show").style.display = "none";
+    document.querySelector("#navbutton_3").style = "background-color: hsl(0, 0%, 98%); ; color: green; border: 1px solid green;";
     for (var i = 0; i < listAllitem.length; i++) {
         if (i == 2) {
             listAllitem[i].style.display = "flex";
@@ -65,30 +67,65 @@ document.getElementById("list-item-4").addEventListener("click", function () {
         }
     }
 });
+document.getElementById("list-item-5").addEventListener("click", function () {
+    document.querySelector(".texet_show").style.display = "none";
+    for (var i = 0; i < listAllitem.length; i++) {
+        if (i == 4) {
+            listAllitem[i].style.display = "block";
+            navbar_block.style.display = "flex";
+            navbar_none.style.display = "none";
+            for (var numberRow = 1; numberRow <= navrow.length; numberRow++) {    
+                if (numberRow == 3) {
+                    navrow[numberRow-1].style = "background-color: rgb(221, 221, 221); color: white; border: none";
+                    navrow[numberRow-1].removeAttribute("onclick")
+                }else{
+                    navrow[numberRow-1].setAttribute("onclick", `buttonstyle(${numberRow},'Cr')`)
+                }
+            }
+            document.getElementById("clear").setAttribute("onclick", `clearNode('Cr')`)
+        } else {
+            listAllitem[i].style.display = "none";
+        }
+    }
+});
+
+
 function clearNode(x) {
     switch (x) {
         case "t":
             var block_conten = document.querySelectorAll(".block_conten_triangle")
             if (block_conten.length > 1) {
-                block_conten.forEach((element , index) => {
+                block_conten.forEach((element, index) => {
                     if (index != 0) {
                         element.remove()
                     }
                 });
                 break;
-            }else{
+            } else {
                 alert("ไม่สามารถลบได้")
-            }break;
+            } break;
         case "ag":
             var block_conten = document.querySelectorAll(".main_block_AG")
             if (block_conten.length > 1) {
-                block_conten.forEach((element , index) => {
+                block_conten.forEach((element, index) => {
                     if (index != 0) {
                         element.remove()
                     }
                 });
                 break;
-            }else{
+            } else {
+                alert("ไม่สามารถลบได้")
+            }
+        case "Cr":
+            var block_conten = document.querySelectorAll(".Caircle_block_conten")
+            if (block_conten.length > 1) {
+                block_conten.forEach((element, index) => {
+                    if (index != 0) {
+                        element.remove()
+                    }
+                });
+                break;
+            } else {
                 alert("ไม่สามารถลบได้")
             }
     }
@@ -229,6 +266,41 @@ function buttonstyle(x, typeManu) {
         }
 
         )
-    }
+    } else if (typeManu == "Cr") {
+        var Cr_block = document.querySelectorAll(".Caircle_block_conten")
+        var displaybutton = document.querySelectorAll(".btnAG_Ad_Re")
+        Cr_block.forEach(Cr_block => {
+            switch (x) {
+                case 1:
+                    Cr_block.style = "width 80%";
+                    buttonav1.style.background = "green";
+                    buttonav1.style.color = "white";
+                    buttonav2.style.background = "white";
+                    buttonav2.style.color = "green";
+                    displaybutton.forEach(displaybutton => {
+                        displaybutton.style.width = "200px"
+                    })
+                    break;
+                case 2:
+                    Cr_block.style = "width: 45%";
+                    buttonav2.style.background = "green";
+                    buttonav2.style.color = "white";
+                    buttonav1.style.background = "white";
+                    buttonav1.style.color = "green";
+                    break;
+                default:
+                    Cr_block.style.width = "80%";
+                    buttonav1.style.background = "green";
+                    buttonav1.style.color = "white";
+                    buttonav2.style.background = "white";
+                    buttonav2.style.color = "green";
+                    displaybutton.forEach(displaybutton => {
+                        displaybutton.style.width = "200px"
+                    })
+                    break;
+            }
+        }
 
+        )
+    }
 }
