@@ -14,7 +14,7 @@ function add_block_conten(x) {
 
             newNodeAG.querySelector("[id^=calculateAG]").setAttribute("onclick", `calculateAverage(${countAG})`);
             //----------------Delete-------------------
-            newNodeAG.querySelector("[id^=removeAG_node]").setAttribute("onclick", `remove_main_AG(${countAG},"AG")`);
+            newNodeAG.querySelector("[id^=removeAG_node]").setAttribute("onclick", `remove_main_All(${countAG},"AG")`);
 
             document.querySelector(".AddNode_AG").appendChild(newNodeAG)
 

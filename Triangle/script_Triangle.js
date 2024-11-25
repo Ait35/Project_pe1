@@ -1,4 +1,4 @@
-let result ;
+let result;
 let count = 0;
 let radian;
 
@@ -7,14 +7,14 @@ function degreeToRadian(block) {
     let number = document.getElementById(`id_input${block}`).value
     if (angle) {
         return radian = number * (Math.PI / 180);
-    }else{
+    } else {
         number = radian
     }
     return radian
 }
-function tan_Not_90(radian, Type){
-    if ((radian == Math.PI / 2 || radian == -Math.PI / 2 || radian == 3 * Math.PI / 2) && (Type == "arctan" || 
-        Type == "tan")){
+function tan_Not_90(radian, Type) {
+    if ((radian == Math.PI / 2 || radian == -Math.PI / 2 || radian == 3 * Math.PI / 2) && (Type == "arctan" ||
+        Type == "tan")) {
         return true
     }
 }
@@ -22,8 +22,8 @@ function Sin_Cos_Tan(radian, block) {
     Type = document.getElementById(`id_select_type${block}`).value
     if (tan_Not_90(radian, Type)) {
         return document.getElementById(`id_output${block}`).innerHTML = result = "+-Infinity"
-    }else{
-         switch (Type) {
+    } else {
+        switch (Type) {
             case "sin":
                 result = Math.sin(radian).toFixed(3)
                 break;
@@ -36,43 +36,43 @@ function Sin_Cos_Tan(radian, block) {
             default:
                 result = "Error"
                 break;
-            }
+        }
         document.getElementById(`id_output${block}`).innerHTML = result
     }
-   
+
 }
-function InverseTrig(block){
+function InverseTrig(block) {
     Type = document.getElementById(`id_select_type_IT${block}`).value
     value = parseFloat(document.getElementById(`id_input_IT${block}`).value)
-    switch(Type){
-        case "arcsin":  
+    switch (Type) {
+        case "arcsin":
             result = (Math.asin(value) * (180 / Math.PI)).toFixed(3)
             break;
         case "arccos":
             result = (Math.acos(value) * (180 / Math.PI)).toFixed(3)
             break;
         case "arctan":
-            result =( Math.atan(value) * (180 / Math.PI)).toFixed(3)
+            result = (Math.atan(value) * (180 / Math.PI)).toFixed(3)
             break;
         default:
             result = "Error"
             break;
     }
-    if(result == "NaN"){
+    if (result == "NaN") {
         document.getElementById(`id_output_IT${block}`).innerHTML = "Invalid input"
-    }else{
+    } else {
         document.getElementById(`id_output_IT${block}`).innerHTML = result
     }
-    
+
 }
 
-function add_main_triangle(){
+function add_main_triangle() {
     count++
     let newNode = document.querySelector(".block_conten_triangle").cloneNode(true);
     newNode.querySelectorAll("[id]").forEach(element => {
-        element.id = element.id.substr(0, element.id.length - 1) + count 
+        element.id = element.id.substr(0, element.id.length - 1) + count
     });
-    
+
     newNode.querySelector("[id^=id_input]").value = "0";
     newNode.querySelector("[id^=id_input_IT]").value = "0";
     newNode.querySelector("[id^=id_output]").innerHTML = "---";
@@ -87,18 +87,22 @@ function add_main_triangle(){
     newNode.querySelector("[id^=I_remove_node]").setAttribute("onclick", `remove_main_triangle(${count})`);
     document.querySelector(".mainAll_Block_contenT").appendChild(newNode)
 
-    let lastNode = document.querySelectorAll("[id^=block]")
-    lastNode = lastNode[lastNode.length - 1]
-    lastNode.id = lastNode.id.substr(0, lastNode.id.length - 1) + count
+    let lastNode = document.querySelectorAll("[id^=tblock]")
+    console.log(lastNode)
+    for (var i = 0; i < lastNode.length; i++) {
+        if(lastNode[i] == lastNode[lastNode.length - 1]){
+            lastNode[i].id = lastNode[i].id.substr(0, lastNode[i].id.length - 1) + count
+        }
+    }
 }
 function remove_main_triangle(block) {
-    if(document.querySelectorAll(`[id^=block]`).length <= 1 ||  
-    document.querySelector(`#block${block}`).id == document.querySelector("#block0").id){
+    if (document.querySelectorAll(`[id^=tblock]`).length <= 1 ||
+        document.querySelector(`#tblock${block}`).id == document.querySelector("#tblock0").id) {
         alert("ไม่สามารถลบได้")
-    }else{
-        document.querySelector(`#block${block}`).remove()
+    } else {
+        document.querySelector(`#tblock${block}`).remove()
     }
-    
+
 }
 
 function Show_conten_triangle(block) {
@@ -106,8 +110,8 @@ function Show_conten_triangle(block) {
     if (select_functionT == "InverseTrig") {
         document.getElementById(`sin_cos_tan${block}`).style.display = "none";
         document.getElementById(`InverseTrig${block}`).style.display = "block";
-    }else if (select_functionT == "SinCosTan") {
-    document.getElementById(`InverseTrig${block}`).style.display = "none";
+    } else if (select_functionT == "SinCosTan") {
+        document.getElementById(`InverseTrig${block}`).style.display = "none";
         document.getElementById(`sin_cos_tan${block}`).style.display = "block";
-    }else{}
+    } else { }
 }

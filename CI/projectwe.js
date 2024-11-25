@@ -17,3 +17,11 @@ function calculateCompoundInterest() {
         ดอกเบี้ยที่ได้รับ: ${interestEarned.toFixed(2)} บาท
     `;
 }
+
+function de_ci() {
+    principal = document.getElementById('principal').value = "";
+    rate = document.getElementById('rate').value = "";
+    timesCompounded = document.getElementById('timesCompounded').value = "";
+    years = document.getElementById('years').value = "";
+    document.getElementById('Ci_result').innerHTML = "";
+}
